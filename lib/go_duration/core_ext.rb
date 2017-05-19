@@ -1,3 +1,5 @@
+require 'go_duration'
+
 module GoDuration
   module CoreExt
     module Numeric
