@@ -9,6 +9,8 @@ class TestGoDuration < MiniTest::Test
       "2m30s" => 150,
       "1h2m30s" => 3750
     }
+
+    @generate_cases = @parse_cases.invert
   end
 
   def test_constants_frozen
@@ -18,8 +20,14 @@ class TestGoDuration < MiniTest::Test
   end
 
   def test_parse
-    @parse_cases.each do |serialized, duration|
-      assert_equal duration, GoDuration.parse(serialized), serialized
+    @parse_cases.each do |serialized, expected|
+      assert_equal expected, GoDuration.parse(serialized), serialized
+    end
+  end
+
+  def test_generate
+    @generate_cases.each do |seconds, expected|
+      assert_equal expected, GoDuration.generate(seconds), seconds
     end
   end
 end
