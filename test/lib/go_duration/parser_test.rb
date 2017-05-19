@@ -2,6 +2,10 @@ require_relative '../../test_helper'
 
 module GoDuration
   class TestParser < MiniTest::Test
+    def test_constants_frozen
+      assert Parser::PART_REGEXP.frozen?
+    end
+
     def test_parse_part_seconds
       assert_equal 0, Parser.parse_part("0s")
       assert_equal 15, Parser.parse_part("15s")

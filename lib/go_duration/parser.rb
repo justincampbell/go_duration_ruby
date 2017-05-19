@@ -1,6 +1,6 @@
 module GoDuration
   class Parser
-    PART_REGEXP = %r{\d+[hms]}
+    PART_REGEXP = %r{\d+[hms]}.freeze
 
     def self.parse_part(part)
       case
