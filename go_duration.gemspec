@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["justin@justincampbell.me"]
 
   spec.summary       = "Go's time.Duration parsing/serialization for Ruby"
-  spec.homepage      = "https://github.com/justincampbell/go-duration"
+  spec.homepage      = "https://github.com/justincampbell/go_duration_ruby"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.require_paths = ["lib"]
