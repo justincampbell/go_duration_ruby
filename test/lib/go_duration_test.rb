@@ -11,6 +11,12 @@ class TestGoDuration < MiniTest::Test
     }
   end
 
+  def test_constants_frozen
+    assert GoDuration::SECOND_SUFFIX.frozen?
+    assert GoDuration::MINUTE_SUFFIX.frozen?
+    assert GoDuration::HOUR_SUFFIX.frozen?
+  end
+
   def test_parse
     @parse_cases.each do |serialized, duration|
       assert_equal duration, GoDuration.parse(serialized), serialized

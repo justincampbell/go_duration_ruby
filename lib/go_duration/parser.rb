@@ -4,9 +4,9 @@ module GoDuration
 
     def self.parse_part(part)
       case
-      when part.end_with?("s") then part.to_i
-      when part.end_with?("m") then part.to_i * MINUTE
-      when part.end_with?("h") then part.to_i * HOUR
+      when part.end_with?(SECOND_SUFFIX) then part.to_i
+      when part.end_with?(MINUTE_SUFFIX) then part.to_i * MINUTE
+      when part.end_with?(HOUR_SUFFIX) then part.to_i * HOUR
       end
     end
 
