@@ -6,6 +6,9 @@ rvm:
   - 2.4
   - ruby-head
 
+env:
+  - FUZZ_N=1_000_00
+
 matrix:
   allow_failures:
     - rvm: ruby-head
