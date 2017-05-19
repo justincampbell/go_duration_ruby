@@ -17,7 +17,7 @@ module GoDuration
     end
 
     def seconds
-      parts.map { |part| self.class.parse_part(part) }.sum
+      parts.map { |part| self.class.parse_part(part) }.reduce(:+)
     end
 
     def parts
